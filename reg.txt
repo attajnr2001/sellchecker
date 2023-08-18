@@ -1,0 +1,131 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="WebApplication_1.Register" EnableEventValidation="false" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+        crossorigin="anonymous" />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            font-family: "poppins";
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(#ff00d48c, #6f00ff9a), url("https://picsum.photos/id/1/500/300");
+            background-size: cover;
+            background-position: center;
+        }
+
+        main {
+            width: 50%;
+            height: 60%;
+            overflow: hidden;
+        }
+
+        .h5 {
+            font-weight: 600;
+            color: mediumvioletred;
+            text-align: center;
+        }
+
+        label {
+            color: #0065b8;
+            font-weight: 500;
+        }
+
+        .mainForm {
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="form1" runat="server" class="d-flex justify-content-center align-items-center mainForm">
+        
+
+        <main class="rounded bg-white">
+            <div class="alert alert-warning" role="alert" runat="server" id="alertDiv" visible="false">
+                Registration failed. Please try again.
+            </div>
+            <div class="alert alert-warning" role="alert" runat="server" id="alertDiv2" visible="false">
+                Passwords do Not Match
+            </div>
+                 <div class="alert alert-warning" role="alert" runat="server" id="alertDiv3" visible="false">
+                Registration Successful
+            </div>
+            <h1 class="h5 my-3">OUR SCHOOL - Register</h1>
+            <form action="">
+                <div class="row p-2">
+                    <div class="col">
+                        <div class="form-group mb-3">
+                            <label for="exampleInputEmail1">ID Number</label>
+                            <asp:TextBox ID="id" runat="server" type="text"
+                                class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="">First Name</label>
+                            <asp:TextBox ID="fname" runat="server" type="text"
+                                class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="exampleInputEmail1">Password</label>
+                            <asp:TextBox ID="pasword" runat="server" type="password"
+                                class="form-control"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group mb-3">
+                            <label for="inputState">Course</label>
+                            <asp:DropDownList ID="course" runat="server" CssClass="form-select">
+                                <asp:ListItem Text="Department 1" Value="dept1"></asp:ListItem>
+                                <asp:ListItem Text="Department 2" Value="dept2"></asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="exampleInputEmail1">Last Name</label>
+                            <asp:TextBox ID="lname" runat="server" type="text"
+                                class="form-control"></asp:TextBox>
+
+
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="exampleInputEmail1">Confirm Password</label>
+
+                            <asp:TextBox ID="password2" runat="server" type="password"
+                                class="form-control"></asp:TextBox>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-3 d-flex justify-content-center">
+                    <asp:Button ID="Button1" runat="server" Text="REGISTER" class="btn btn-outline-primary btn-sm w-25 mx-3" OnClick="Button1_Click" />
+                    <a href="http://localhost:61649/Login" class="btn btn-outline-warning">I have an account</a>
+                </div>
+            </form>
+        </main>
+    </form>
+</body>
+</html>

@@ -1,0 +1,80 @@
+using System;
+using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Text;
+
+namespace WebApplication_1
+{
+    public partial class Register : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            alertDiv.Visible = false; 
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string cs = @"Data Source=DESKTOP-GAURU7P\SQLEXPRESS;Initial Catalog=LMS;Integrated Security=True";
+
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                try
+                {
+                    conn.Open();
+
+                    string idNumber = id.Text;
+                    string plainPassword = pasword.Text; 
+                    string dept = course.Text;
+                    string firstName = fname.Text;
+                    string lastName = lname.Text;
+
+                   
+                    string hashedPassword = ComputeHash(plainPassword);
+
+                    string insertQuery = "INSERT INTO [users] (idNumber, password, dept, firstName, lastName) VALUES (@idNumber, @password, @dept, @firstName, @lastName)";
+                    using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@idNumber", idNumber);
+                        cmd.Parameters.AddWithValue("@password", hashedPassword);
+                        cmd.Parameters.AddWithValue("@dept", dept);
+                        cmd.Parameters.AddWithValue("@firstName", firstName);
+                        cmd.Parameters.AddWithValue("@lastName", lastName);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            alertDiv3.Visible = true;
+                            Response.Redirect("http://localhost:61649/Login");
+                        }
+                        else
+                        {
+                            
+                            alertDiv.Visible = true; 
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("An error occurred: " + ex.Message);
+                }
+            }
+        }
+
+        private string ComputeHash(string input)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(input);
+                byte[] hashBytes = sha256.ComputeHash(bytes);
+
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    builder.Append(hashBytes[i].ToString("x2")); 
+                }
+
+                return builder.ToString();
+            }
+        }
+    }
+}
