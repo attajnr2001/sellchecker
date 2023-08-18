@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      * {
+        font-family: "poppins";
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(#ff00d48c, #6f00ff9a),
+          url("https://picsum.photos/id/1/500/300");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .h5 {
+        font-weight: 600;
+        color: mediumvioletred;
+      }
+
+      main {
+        width: 50%;
+        height: 60%;
+        overflow: hidden;
+      }
+
+      .col,
+      .row {
+        height: 100%;
+      }
+      .right {
+        color: white;
+        background: linear-gradient(220deg, #00a0df8c, #cbf802b0),
+          url("https://picsum.photos/id/90/300/300");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .col img {
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body class="d-flex justify-content-center align-items-center">
+    <main class="rounded bg-white">
+      <div class="row">
+        <div
+          class="col right d-flex flex-column justify-content-center align-items-center"
+        >
+          <h1 class="h4 fw-bold">Our School</h1>
+          <p class="text-center">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ratione
+            explicabo inventore quibusdam.
+          </p>
+          <a href="/register.html" class="btn btn-outline-primary">Register</a>
+        </div>
+        <div
+          class="col d-flex flex-column justify-content-center align-items-center"
+        >
+          <h1 class="h5 mb-3">LOGIN</h1>
+
+          <form>
+            <div class="form-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Enter id"
+              />
+            </div>
+            <div class="form-group mb-3">
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder="Password"
+              />
+            </div>
+
+            <button type="submit" class="btn btn-outline-success btn-sm">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      * {
+        font-family: "poppins";
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(#ff00d48c, #6f00ff9a),
+          url("https://picsum.photos/id/1/500/300");
+        background-size: cover;
+        background-position: center;
+      }
+      main {
+        width: 50%;
+        height: 60%;
+        overflow: hidden;
+      }
+      .h5 {
+        font-weight: 600;
+        color: mediumvioletred;
+        text-align: center;
+      }
+
+      label {
+        color: #0065b8;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body class="d-flex justify-content-center align-items-center">
+    <main class="rounded bg-white">
+      <h1 class="h5 my-3">OUR SCHOOL - Register</h1>
+      <form action="">
+        <div class="row p-2">
+          <div class="col">
+            <div class="form-group mb-3">
+              <label for="exampleInputEmail1">ID Number</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="form-group mb-3">
+              <label for="exampleInputEmail1">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputPassword1"
+              />
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="inputState">Level</label>
+              <select id="inputState" class="form-select">
+                <option>100</option>
+                <option>200</option>
+                <option>300</option>
+                <option>400</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            <label for="exampleInputEmail1">Password</label>
+            <div class="form-group mb-3">
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="form-group mb-3">
+              <label for="exampleInputEmail1">Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputPassword1"
+              />
+            </div>
+            <div class="form-group mb-3">
+              <label for="inputState">Course</label>
+              <select id="inputState" class="form-select">
+                <option>BSc. ICT</option>
+                <option>BSc. Social Studies</option>
+                <option>BSc. Political Sciene</option>
+                <option>Mathematics</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-3 d-flex justify-content-center">
+          <button type="submit" class="btn btn-outline-primary btn-sm w-25 mx-3">Submit</button>
+          <a href="/login.html" class="btn btn-outline-warning">I have an account</a>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
